@@ -8,9 +8,7 @@ function App() {
   const [author, setAuthor] = useState("Seneca");
 
   const data = async () => {
-    const apiRes = await fetch(
-      "https://aitorp6.herokuapp.com/quotes/api/random"
-    );
+    const apiRes = await fetch("https://random-math-quote-api.herokuapp.com/");
     const resJSON = await apiRes.json();
     return resJSON;
   };
@@ -18,8 +16,8 @@ function App() {
   const generate = random => {
     //random.preventDefault();
     data().then(res => {
-      setAuthor(res.quotes.author);
-      setQuote(res.quotes.quote);
+      setAuthor(res.author);
+      setQuote(res.quote);
     });
   };
 
@@ -31,8 +29,12 @@ function App() {
       <button id="new-quote" onClick={random => generate()}>
         Generate Random Quote
       </button>
-      <a href="twitter.com/intent/tweet" id="tweet-quote">
-        Tweet it out boi
+      <a
+        href={`https://twitter.com/intent/tweet?text=${quote}  --${author}`}
+        id="tweet-quote"
+        target="blank"
+      >
+        Tweet
       </a>
     </div>
   );
