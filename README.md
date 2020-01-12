@@ -2,6 +2,8 @@
 
 The user can generate a random quote by clicking on 'Generate random quote' button .The user can also tweet the quote.
 
+This project is part of the Curriculum of Free code camp https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine. I've already done this project in the past (With pure vanilla JS), but i decided to do it a gain using React.  
+
 In order to pass, i had to fullfill the following user-stories: 
 
 User Story #1: I can see a wrapper element with a corresponding id="quote-box".
